@@ -10,7 +10,7 @@ import java.io.IOException;
 public class GenerateXML {
 	
 	//absolute path
-	static String pathXML = "/home/luiz-varela/work/prefuse-beta/data/";
+	static String pathXML = "/home/luiz-varela/work/prefuse-grafo/data/";
 
 	// Add XML header
 	public static StringBuffer file = new StringBuffer(
@@ -61,7 +61,7 @@ public class GenerateXML {
 		} catch (IOException e) {
 
 			e.printStackTrace();
-			System.err.println("Erro ao salvar arquivo...Saindo");
+			System.err.println("Error...");
 			System.exit(0);
 
 		}
