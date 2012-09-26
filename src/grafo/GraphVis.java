@@ -51,12 +51,13 @@ public class GraphVis {
 
         // labels for name
         LabelRenderer nameLabel = new LabelRenderer("name");
-        nameLabel.setRoundedCorner(20, 20);
+        nameLabel.setRoundedCorner(8, 8);
         /* nameLabel decribes how to draw the data elements labeled as "name" */
 
         // create the render factory
         vis.setRendererFactory(new DefaultRendererFactory(nameLabel));
-
+        
+       
         // 4. process the actions
 
         // colour palette for nominal data type
@@ -65,7 +66,7 @@ public class GraphVis {
 
 
         // map data to colours in the palette
-        DataColorAction fill = new DataColorAction("grafo.nodes", "gender", Constants.NOMINAL, VisualItem.FILLCOLOR, palette);
+        DataColorAction fill = new DataColorAction("grafo.edges", "weight", Constants.NOMINAL, VisualItem.FILLCOLOR, palette);
         /* fill describes what colour to draw the graph based on a portion of the data */
 
         // node text
@@ -75,9 +76,10 @@ public class GraphVis {
         // edge
         ColorAction edges = new ColorAction("grafo.edges", VisualItem.STROKECOLOR, ColorLib.gray(200));
         /* edge describes what colour to draw the edges */
+        
 
         // combine the colour assignments into an action list
-        ActionList colour = new ActionList();
+        ActionList colour = new ActionList(Activity.INFINITY);
         colour.add(fill);
         colour.add(text);
         colour.add(edges);
