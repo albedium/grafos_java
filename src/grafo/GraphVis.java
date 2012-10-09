@@ -1,4 +1,5 @@
 package grafo;
+import luiz.models.*;
 
 import javax.swing.JFrame;
 
